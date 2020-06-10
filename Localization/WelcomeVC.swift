@@ -10,10 +10,12 @@ import UIKit
 
 class WelcomeVC: UIViewController {
 
+    @IBOutlet weak var label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        label.text = "hello".localized()
     }
     
 

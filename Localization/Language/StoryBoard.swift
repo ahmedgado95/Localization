@@ -1,6 +1,6 @@
 //
 //  StoryBoard.swift
-//  3aqarat
+//  Localization
 //
 //  Created by ahmed gado on 7/23/19.
 //  Copyright © 2019 ahmed gado. All rights reserved.
@@ -11,22 +11,7 @@ import UIKit
 public enum Storyboard: String {
     //storyBoards in APP
     case Splash
-    case Authentication
-    case Home
-    case Search
-    case RebortAndCommunication
-    case Order
-    case StatusOrder
-    case Settings
-    case Details
-    case MyPropertiy
-    case RentDataAndAccounts
-    case Profile
-    case ShareAuctionStatus
-    case OrderPage
-    case MasoulAkar
-    case Sannad
-//    case Main
+    case Main
     public func instantiate<VC: UIViewController>(_ viewController: VC.Type) -> VC {
         guard
             let vc = UIStoryboard(name: self.rawValue, bundle: nil)
@@ -223,6 +208,19 @@ internal extension UIViewController {
         let controller = UIViewController()
         controller.view = view
         return controller
+    }
+    
+}
+extension UIViewController {
+    
+    
+    
+    public static var defaultNib: String {
+        return self.description().components(separatedBy: ".").dropFirst().joined(separator: ".")
+    }
+    
+    public static var storyboardIdentifier: String {
+        return self.description().components(separatedBy: ".").dropFirst().joined(separator: ".")
     }
     
 }

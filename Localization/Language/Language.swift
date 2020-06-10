@@ -1,6 +1,7 @@
 //
 //  Language.swift
-//  3aqarat
+//  Localization
+
 //
 //  Created by ahmed gado on 7/23/19.
 //  Copyright © 2019 ahmed gado. All rights reserved.
@@ -27,3 +28,9 @@ class Language {
     }
 }
  
+extension String {
+    // MARK: Localization
+    public func localized() -> String {
+        return NSLocalizedString(self, comment: "")
+    }
+}
